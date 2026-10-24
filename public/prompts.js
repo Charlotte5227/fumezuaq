@@ -256,5 +256,13 @@ TIME_UNIT_PREFIX + SINGLE_COMPLETED_NUMERAL_MORPHEME
 - この禁止に例外はない。
 - 上記7単位が使える場面で、未知の「時間単位語根」を捏造しない。
 `;
-const PROMPT_DICTIONARY_V55 = PROMPT_DICTIONARY_V53 + PROMPT_TIME_QUANTITY_V55;
-const PROMPT_IR_V55 = PROMPT_IR_V53 + PROMPT_TIME_QUANTITY_V55;
+const PROMPT_POSSESSIVE_NP_FIX = `
+【所有者指定の辞書運用（新文法ではない）】
+- 「私たちの場所」等の所有者代名詞＋「の」＋名詞では、C1参与者ではなく既存R3所有者指定を優先確認する。
+- 辞書 R3-23 = kutoq-bupunaiq（一人称複数の所有者指定）。R3-16 = 一人称、R3-25 = 二人称複数、R3-27 = 三人称複数。
+- R3はR領域なので名詞語根の前に付く。例: 私たちの場所 = kutoq-bupunaiq-tesuaq（R3-23 + ROOT-136）。
+- 日本語「私たち」自体は包括性／排他性の区別を必須としない。辞書にないC1:inclusivityやgenitiveを生成・Unknown化しない。
+- 法的所有・共有等の詳細な所有形態は原文に無ければ勝手に加えない。
+`;
+const PROMPT_DICTIONARY_V55 = PROMPT_DICTIONARY_V53 + PROMPT_TIME_QUANTITY_V55 + PROMPT_POSSESSIVE_NP_FIX;
+const PROMPT_IR_V55 = PROMPT_IR_V53 + PROMPT_TIME_QUANTITY_V55 + PROMPT_POSSESSIVE_NP_FIX;
