@@ -75,6 +75,54 @@ function relevantEntries(input){
 }
 function relevantDedup(a){let seen=new Set;return a.filter(x=>{let k=x.id+"|"+x.form;if(seen.has(k))return false;seen.add(k);return true})}
 
+// Resolve an unambiguous standalone Japanese possessive noun phrase using
+// the existing R3 owner markers. Do not infer a legal-ownership subtype,
+// inclusivity/exclusivity, or any grammatical category absent from the dictionary.
+const SIMPLE_POSSESSIVE_OWNERS = Object.freeze([
+  {forms:["私たち","私達","わたしたち","我々","われわれ","僕たち","僕達","俺たち","俺達"],id:"R3-23"},
+  {forms:["あなたたち","あなた達","貴方たち","君たち","君達"],id:"R3-25"},
+  {forms:["私","わたし","僕","俺"],id:"R3-16"},
+  {forms:["あなた","貴方","君"],id:"R3-17"}
+]);
+function matchSimplePossessiveNoun(input){
+  const phrase=String(input||"").normalize("NFKC").trim().replace(/[。．.!！]+$/u,"").replace(/\s+/g,"");
+  for(const group of SIMPLE_POSSESSIVE_OWNERS){
+    const owner=dictById(group.id);
+    if(!owner || owner.zone!=="R" || owner.large!=="所有" || !owner.small_form)continue;
+    for(const pronoun of group.forms){
+      if(!phrase.startsWith(pronoun+"の"))continue;
+      const noun=phrase.slice(pronoun.length+1);
+      if(!noun)continue;
+      const hits=DICT.filter(e=>e.zone==="ROOT" && e.large==="名詞" &&
+        (e.meaning===noun || (e.keywords||[]).includes(noun)));
+      // Ambiguous names or unknown/compound noun phrases must stay with the AI pipeline.
+      if(hits.length!==1)return null;
+      return {source:String(input||"").trim(),pronoun,noun,owner,root:hits[0]};
+    }
+  }
+  return null;
+}
+function compileSimplePossessiveNoun(input){
+  const match=matchSimplePossessiveNoun(input);
+  if(!match)return null;
+  const {source,owner,root}=match;
+  const ir={chunks:[{
+    jp:source,meaning:source,center_root_id:root.id,modifier_roots:[],
+    affix_ids:[owner.id],analytical_composition:null,
+    links:[],unresolved:[],unresolved_relation:[]
+  }],sentence_unresolved:[]};
+  const result=compileIR(ir);
+  result.chunks[0].meaning=source;
+  result.chunks[0].used_ids=[owner.id,root.id];
+  result.chunks[0].zone="ROOT";
+  result.warnings=[];
+  result._ir_validation=validateIR(ir);
+  result._validation=validateTranslation(result,null);
+  result._debug={candidateCount:2,semantic:{chunks:[{jp:source,center:root.meaning,relations:["所有者指定"]}]},
+    resolved:{resolved:[owner,root],unresolved:[]},ir,compiler:"deterministic-possessive-np"};
+  return result;
+}
+
 function ruleTranslate(input){
  if(direction==="fu2ja"){
    const hits=analyzeFumezuaq(input);
@@ -82,7 +130,9 @@ function ruleTranslate(input){
      chunks:hits.map(x=>({surface:x.surface,meaning:x.meaning,zone:x.zone,note:x.note})),
      warnings:["ルールベース逆引きは形態素・語根の辞書一致を中心にした補助解析です。自然な日本語生成はAIモードが適しています。"]};
  }
- const rel=relevantEntries(input).filter(e=>e.zone==="ROOT");
+  const possessive=compileSimplePossessiveNoun(input);
+  if(possessive)return possessive;
+  const rel=relevantEntries(input).filter(e=>e.zone==="ROOT");
  let used=[]; let out=input;
  rel.sort((a,b)=>b.meaning.length-a.meaning.length).forEach(e=>{
    const variants=(e.meaning||"").split(/[・\/]/).filter(x=>x.length>=1);
@@ -523,6 +573,8 @@ IR規則:
 - 同一語へ吸収した副語根はmodifier_rootsに置き、relation_idを必須にする。単に語根を並べてはいけない。
 - relation_idは「副語根と中心語根の関係」を示す実在辞書ID。例: 雨→止むなら非意図主体C1-02、山→行くなら方向C2-31。
 - 人称・数など語根を持たない情報はaffix_ids。
+- 「私たちの場所」のような名詞句では、中心ROOT-136「場所」の前にR3-23「一人称複数所有者指定」を置く。R3-23があればC1の一人称・複数を重複して付けない。
+- 日本語の「私たち」は聞き手包含・排除を明示しない。辞書にないinclusivity接辞や汎用genitive接辞を捏造・unresolved化しない。
 - 時間量は affix_ids に TIMEUNIT-* と NUM-* を入れる。TIMEUNIT-* は必ずちょうど1個の「完成数詞」NUM-* と組にする。
 - 時間量のために複数のNUM-*を並べない。Xスコープ等で複合数詞を包んで時間量にすることも禁止。
 - unresolved概念はunresolvedへ。表面形を推測しない。
@@ -545,8 +597,20 @@ function validateIR(ir){
    }
    for(const id of (c.affix_ids||[])) if(!dictById(id))errors.push(`chunk${i+1}: 接辞ID ${id} は辞書にありません`);
 
-   const ids=(c.affix_ids||[]);
-   const timeUnitIds=ids.filter(id=>String(id).startsWith("TIMEUNIT-"));
+     const ids=(c.affix_ids||[]);
+     const simpleOwner=matchSimplePossessiveNoun(c.jp||c.source||"");
+     if(simpleOwner){
+       if(c.center_root_id!==simpleOwner.root.id || !ids.includes(simpleOwner.owner.id)){
+         errors.push(`chunk${i+1}: 所有名詞句には中心語根 ${simpleOwner.root.id} と所有者接辞 ${simpleOwner.owner.id} が必要です`);
+       }
+       if(ids.some(id=>/^C1-(?:P|N)/.test(id))){
+         errors.push(`chunk${i+1}: 所有者の人称・数にC1参与者接辞を重複使用しています`);
+       }
+       if(JSON.stringify([...(c.unresolved||[]),...(c.unresolved_relation||[])]).match(/inclusiv|genitive|属格|包括性/i)){
+         errors.push(`chunk${i+1}: 辞書で確定できる所有名詞句に未登録の属格・包括性を付加しています`);
+       }
+     }
+     const timeUnitIds=ids.filter(id=>String(id).startsWith("TIMEUNIT-"));
    const numeralEntries=ids.map(id=>dictById(id)).filter(e=>e && e.zone==="NUM" && (e.kind==="数詞" || e.kind==="派生数詞"));
    const numeralElementIds=ids.filter(id=>String(id).startsWith("NUM-ELEM-") || id==="NUM-POINT");
    const scopeIds=ids.filter(id=>String(id).startsWith("X-"));
@@ -644,16 +708,17 @@ function compileIR(ir, options={}){
       parts.push(...relDay.parts);
       structuralUnknowns.push(...relDay.unknowns);
     }else{
-      const modifierParts=[];
-      for(const mr of (c.modifier_roots||[])){
+       const modifierParts=[];
+       const coreParts=[];
+       for(const mr of (c.modifier_roots||[])){
         const r = dictById(mr.root_id);
         if(r?.form) modifierParts.push(r.form);
         else if(mr.root_id) structuralUnknowns.push(mr.meaning||mr.root_id);
       }
 
       const center = c.center_root_id ? dictById(c.center_root_id) : null;
-      if(modifierParts.length) parts.push(...modifierParts);
-      if(center?.form) parts.push(center.form);
+       if(modifierParts.length) coreParts.push(...modifierParts);
+       if(center?.form) coreParts.push(center.form);
       else if(c.center_root_id) structuralUnknowns.push(c.meaning||c.jp||c.center_root_id);
 
       const rawAffixIds=(c.affix_ids||[]);
@@ -662,7 +727,7 @@ function compileIR(ir, options={}){
 
       if(timeUnitEntry && numeralEntry){
         const tq=buildTimeQuantity(String(timeUnitEntry.meaning||"").replace(/単位$/,""), numeralEntry.form);
-        if(tq.ok) parts.push(tq.surface);
+         if(tq.ok) coreParts.push(tq.surface);
         else structuralUnknowns.push(tq.reason||"時間量");
       }
 
@@ -672,10 +737,14 @@ function compileIR(ir, options={}){
       });
       const affixEntries=genericAffixIds.map(id=>({id,e:dictById(id)}));
       const relationEntries=(c.modifier_roots||[]).map(x=>({id:x.relation_id,e:dictById(x.relation_id),meaning:x.meaning}));
-      const allAffixes=[...relationEntries,...affixEntries];
+       const allAffixes=[...relationEntries,...affixEntries].sort((a,b)=>{
+         const az=ZONE_ORDER[a.e?.zone]??99, bz=ZONE_ORDER[b.e?.zone]??99;
+         if(az!==bz)return az-bz;
+         return String(a.e?.large||"").localeCompare(String(b.e?.large||""));
+       });
 
-      const seenLarge=new Set();
-      const realized=[];
+       const seenLarge=new Set();
+       const prefixParts=[],suffixParts=[];
       for(const item of allAffixes){
         const e=item.e;
         if(!e){
@@ -685,14 +754,15 @@ function compileIR(ir, options={}){
         const lg=e.large_form||"";
         const sm=e.small_form||"";
         const key=e.zone+"|"+(e.large||lg||String(e.id||"").split("-")[0]);
-        if(lg&&sm){
-          if(!seenLarge.has(key)){realized.push(lg);seenLarge.add(key);}
-          realized.push(sm);
-        }else if(e.form){
-          realized.push(...String(e.form).split("-").filter(Boolean));
-        }
-      }
-      if(realized.length) parts.push(...realized);
+         const target=(ZONE_ORDER[e.zone]??99)<ZONE_ORDER.ROOT ? prefixParts : suffixParts;
+         if(lg&&sm){
+           if(!seenLarge.has(key)){target.push(lg);seenLarge.add(key);}
+           target.push(sm);
+         }else if(e.form){
+           target.push(...String(e.form).split("-").filter(Boolean));
+         }
+       }
+       parts.push(...prefixParts,...coreParts,...suffixParts);
     }
 
     const irUnknowns=collectChunkUnknowns(c);
@@ -738,7 +808,7 @@ ${PROMPT_DICTIONARY_V55}
 - 日本語の文節境界をそのままfumezuaqの語境界にしない。
 - 「Xが」「Xは」「Xを」だけでは原則独立意味塊にしない。
 - まず述語・中心概念を決め、参与者・対象・方向・時間・条件などを中心語根へ吸収できるか判定する。
-- 人称代名詞を humeq「人」の独立語で表さない。私・あなた・彼・彼女などは原則C1参与者情報として中心語根へ付ける。
+- 人称代名詞を humeq「人」の独立語で表さない。文の参与者はC1を用いるが、「私たちの場所」のような所有者の人称はR3を用い、C1の動作主と混同しない。
 - 名詞語根を独立させるのは、その名詞中心の意味塊が自立するときだけ。
 - 「雨が止む」は「雨」+「止む」に分けず、tokuq「止む」を中心に雨を非意図主体として吸収する。
 - 「彼は山へ行ける」は「彼」を独立語にせず、waraq「行く」を中心に三人称単数・方向・可能を付ける。
@@ -763,13 +833,17 @@ function buildCandidates(input,sem){
       e.kind==="数詞形成接辞"
     )));
   }
-  rel.push(...DICT.filter(e=>/まで|期限|朝|条件|なら|三人称|単数|方向|可能|推量|過去|継続|引用/.test((e.meaning||"")+" "+(e.keywords||[]).join(" "))));
+   if(/(?:私|わたし|我々|われわれ|僕|俺|あなた|貴方|君|彼|彼女)(?:たち|達|ら)?の/.test(input)){
+     rel.push(...DICT.filter(e=>e.id==="R3" || /^R3-(?:16|17|18|23|25|27)$/.test(e.id)));
+   }
+   rel.push(...DICT.filter(e=>/まで|期限|朝|条件|なら|三人称|単数|方向|可能|推量|過去|継続|引用/.test((e.meaning||"")+" "+(e.keywords||[]).join(" "))));
   return relevantDedup(rel).slice(0,360).map(compactEntry);
 }
 function resolvePrompt(input,sem,cands){return `あなたはfumezuaq辞書照合器です。最終文はまだ作らないでください。\n${GRAMMAR}\n${PROMPT_TIME_QUANTITY_V55}\n原文:${input}\n意味解析:${JSON.stringify(sem)}\n辞書候補:${JSON.stringify(cands)}\n各概念を既存辞書へ対応付け、新造は禁止。辞書にあるものをunknownにしない。
 時間量では、単位概念を TIMEUNIT-*、数値を NUM-* にそれぞれ対応付ける。
 例:「2時間」→ TIMEUNIT-HOUR + NUM-02。「1日前」→ TIMEUNIT-DAY + NUM-01 + C3-REL-01。
 時間量単位を通常語根で代用しない。
+「私たちの〜」は所有者指定 R3-23（kutoq-bupunaiq）を確認。「私たち」の包括性・排他性を無理に指定しない。
 JSONのみ: {"resolved":[{"concept":"","id":"","form":"","meaning":"","zone":"","alternatives":[]}],"unresolved":[]}`;}
 function generatePrompt(input,sem,res){return `あなたはfumezuaq構文生成器です。
 ${GRAMMAR}
@@ -906,7 +980,11 @@ async function aiTranslate(provider,model,input){
    return await runStage(provider,model,"逆翻訳解析",prompt,'{"translation":"","chunks":[],"warnings":[]}');
  }
  setPipelineStatus("意味解析",1,6);
- const fixedChunks = chunkMode==="auto" ? [] : normalizeChunkDrafts(getChunkInputs());
+   if(chunkMode==="auto"){
+     const nounPhrase=compileSimplePossessiveNoun(input);
+     if(nounPhrase){setPipelineStatus("完了",6,6);return nounPhrase;}
+   }
+   const fixedChunks = chunkMode==="auto" ? [] : normalizeChunkDrafts(getChunkInputs());
  if(chunkMode!=="auto" && !fixedChunks.length) throw new Error("意味塊指定モードでは、少なくとも1つの意味塊を入力してください。");
  const analyticalCompositions = fixedChunks.length ? analyticalCompositionsFromFixedChunks(fixedChunks) : [];
  const compositionHint = analyticalCompositions.length ? `\n【既存要素による分析的構成候補】\n${JSON.stringify(analyticalCompositions)}\n完全一致語がなくても、complete=trueならこの構成を優先しunresolved扱いしない。complete=falseなら確認済み部分だけ保持し、不足部分のみunresolvedにする。` : "";
