@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>fumezuaq studio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="noise"></div>
+<header class="topbar">
+  <div class="brand"><div class="sigil">fu</div><div><strong>fumezuaq</strong><small>translation & morphology studio</small></div></div>
+  <nav>
+    <button class="nav active" data-view="translate">翻訳</button>
+    <button class="nav" data-view="analyze">解析</button>
+    <button class="nav" data-view="dictionary">辞書</button>
+    <button class="nav" data-view="settings">AI設定</button>
+  </nav>
+</header>
+
+<main>
+<section id="translate" class="view active">
+  <div class="hero">
+    <p class="eyebrow">FUMEZUAQ TRANSLATOR / PROTOTYPE 01</p>
+    <h1>意味を、<span>形態素へ。</span></h1>
+    <p>日本語と fumezuaq の間を、意味塊・中心語根・接辞構造まで見ながら翻訳します。</p><div class="pipeline-wrap"><div class="pipeline-badge">意味解析 → 辞書照合 → unresolved再検索 → Typed IR → 決定論コンパイル → 検証</div><div id="pipelineStatus" class="pipeline-status">待機中</div></div>
+  </div>
+
+  <div class="translate-grid">
+    <article class="editor panel">
+      <div class="panel-head">
+        <div class="segmented"><button id="ja2fu" class="selected">日本語 → fumezuaq</button><button id="fu2ja">fumezuaq → 日本語</button></div>
+        <button id="swap" class="iconbtn">⇄</button>
+      </div>
+      <textarea id="inputText" placeholder="例：私は昨日、山へ行った。"></textarea>
+      <div class="editor-foot"><span id="charCount">0 文字</span><button id="clearInput" class="ghost">クリア</button></div>
+    </article>
+
+    <article class="result panel">
+      <div class="panel-head">
+        <div><span class="label">TRANSLATION</span><strong id="modeLabel">fumezuaq</strong></div>
+        <div class="provider-inline"><select id="provider"><option value="rule">ルールベース</option><option value="openai">OpenAI</option><option value="anthropic">Claude</option><option value="gemini">Gemini</option></select></div>
+      </div>
+      <div id="outputText" class="output empty">翻訳結果がここに表示されます。</div>
+      <div class="action-row">
+        <button id="translateBtn" class="primary">翻訳する <span>→</span></button>
+        <button id="copyBtn" class="ghost">コピー</button>
+      </div>
+    </article>
+  </div>
+
+  
+<section class="card chunking-card">
+  <h2>意味塊の指定</h2>
+  <p class="muted">fumezuaq固有の「意味塊」だけは、人間が確定できます。手動指定した場合、AIは再分割・再結合しません。</p>
+  <div class="chunk-mode-options">
+    <label><input type="radio" name="chunkMode" value="auto" checked> AI自動</label>
+    <label><input type="radio" name="chunkMode" value="assist"> AI提案 → 編集</label>
+    <label><input type="radio" name="chunkMode" value="manual"> 完全手動</label>
+  </div>
+  <div id="chunkEditorPanel" hidden>
+    <div class="chunk-toolbar">
+      <button type="button" id="proposeChunksBtn">✨ AIで意味塊を提案</button>
+      <button type="button" id="addChunkBtn">＋ 意味塊を追加</button>
+    </div>
+    <div id="chunkList"></div>
+    <p class="muted small">この欄に入力された意味塊は翻訳条件として固定されます。例: 「昨日」 / 「私は山へ」 / 「行った」</p>
+  </div>
+</section>
+
+<section class="explanation-panel">
+<div class="explanation-toolbar"><div><h3>翻訳の説明</h3><p>翻訳本体とは分離して、必要なときだけ詳細な採用理由を生成します。</p></div><button id="explainBtn" class="secondary-btn" type="button">翻訳の説明</button></div>
+<div id="explanationBox" class="explanation-box"></div></section>
+<div id="analysisCards" class="analysis-cards"></div>
+</section>
+
+<section id="analyze" class="view">
+  <div class="section-head"><div><p class="eyebrow">MORPHOLOGY</p><h2>形態素解析</h2></div></div>
+  <div class="panel analyzer">
+    <textarea id="analyzeInput" placeholder="fumezuaq の語・文を入力"></textarea>
+    <button id="analyzeBtn" class="primary">解析する</button>
+  </div>
+  <div id="morphResult" class="morph-grid"></div>
+</section>
+
+<section id="dictionary" class="view">
+  <div class="section-head">
+    <div><p class="eyebrow">LEXICON / AFFIX INDEX</p><h2>電子辞書</h2></div>
+    <div id="dictCount" class="count"></div>
+  </div>
+  <div class="dict-tools panel">
+    <input id="dictSearch" placeholder="日本語・ラテン文字・IDで検索">
+    <select id="dictZone"><option value="">全領域</option><option>S</option><option>R</option><option>D</option><option>ROOT</option><option>E</option><option>K</option><option>C</option><option>X</option><option>NUM</option></select>
+    <select id="dictKind"><option value="">全種類</option><option>単語</option><option>小分類接辞</option><option>大分類接辞</option><option>接辞</option><option>構造接辞</option><option>数詞</option><option>数詞形成接辞</option><option>数詞記号</option><option>派生数詞</option><option>時間単位接頭要素</option></select>
+  </div>
+  <div id="dictList" class="dict-list"></div>
+</section>
+
+
+<section id="settings" class="view">
+  <div class="section-head"><div><p class="eyebrow">AI BRIDGE / GITHUB PAGES</p><h2>AI設定</h2></div></div>
+  <article class="panel security warningbox">
+    <h3>ブラウザ保存モード</h3>
+    <p>この版はGitHub Pages向けです。APIキーはこのページのJavaScriptに埋め込まず、あなたが入力した値だけを利用します。「このブラウザに保存」を有効にした場合のみ <code>localStorage</code> に保存されます。</p>
+    <p><strong>注意:</strong> ブラウザ内のキーは、同じ端末を使える人・悪意ある拡張機能・ページへ注入されたスクリプト等から完全には保護できません。専用・低権限・利用上限付きのキーを推奨します。</p>
+  </article>
+  <div class="settings-grid">
+    <article class="panel setting-card provider-card">
+      <div class="provider-title"><h3>OpenAI</h3><span id="openaiState" class="state">未設定</span></div>
+      <label>APIキー<div class="keyrow"><input id="openaiKey" type="password" autocomplete="off" placeholder="sk-..."><button class="iconbtn eye" data-target="openaiKey">表示</button></div></label>
+      <label>モデル<input id="openaiModel" value="gpt-5" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+      <label class="savecheck"><input id="openaiSave" type="checkbox"> このブラウザに保存</label>
+      <div class="keyactions"><button class="ghost savekey" data-provider="openai">保存</button><button class="ghost testkey" data-provider="openai">接続テスト</button><button class="ghost deletekey" data-provider="openai">削除</button></div>
+    </article>
+    <article class="panel setting-card provider-card">
+      <div class="provider-title"><h3>Claude</h3><span id="anthropicState" class="state">未設定</span></div>
+      <label>APIキー<div class="keyrow"><input id="anthropicKey" type="password" autocomplete="off" placeholder="sk-ant-..."><button class="iconbtn eye" data-target="anthropicKey">表示</button></div></label>
+      <label>モデル<input id="anthropicModel" value="claude-opus-5" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+      <label class="savecheck"><input id="anthropicSave" type="checkbox"> このブラウザに保存</label>
+      <div class="keyactions"><button class="ghost savekey" data-provider="anthropic">保存</button><button class="ghost testkey" data-provider="anthropic">接続テスト</button><button class="ghost deletekey" data-provider="anthropic">削除</button></div>
+      <p class="provider-note">組織設定によってはブラウザからのCORSアクセスが拒否される場合があります。</p>
+    </article>
+    <article class="panel setting-card provider-card">
+      <div class="provider-title"><h3>Gemini</h3><span id="geminiState" class="state">未設定</span></div>
+      <label>APIキー<div class="keyrow"><input id="geminiKey" type="password" autocomplete="off" placeholder="AIza... / auth key"><button class="iconbtn eye" data-target="geminiKey">表示</button></div></label>
+      <label>モデル<input id="geminiModel" value="gemini-3.8-flash" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+      <label class="savecheck"><input id="geminiSave" type="checkbox"> このブラウザに保存</label>
+      <div class="keyactions"><button class="ghost savekey" data-provider="gemini">保存</button><button class="ghost testkey" data-provider="gemini">接続テスト</button><button class="ghost deletekey" data-provider="gemini">削除</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="card" id="promptPolicyCard">
+  <h2>AI翻訳指示 v5.5.2</h2>
+  <p class="muted">これはfumezuaqの言語仕様ではなく、既存仕様をAIが扱うためのプロンプト指示です。</p>
+  <details>
+    <summary>判断階層</summary>
+    <p>A 最上位原則 → B 意味塊 → C 語内部 → D 塊間関係 → E 辞書 → F IR → H 検証。工程ごとに必要な章だけをAIへ渡します。</p>
+  </details>
+</section>
+
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="prompts.js"></script>
+<script src="app.js"></script>
+</body></html>
