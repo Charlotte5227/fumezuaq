@@ -1499,8 +1499,12 @@
     "mora": "3",
     "source": "v9",
     "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
-    "keywords": []
+    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。 同一形の重複項目（単数明示）を統合。複数指定には専用形を用いる。",
+    "keywords": [
+      "一人称単数",
+      "私の",
+      "所有者"
+    ]
   },
   {
     "id": "R3-17",
@@ -1515,8 +1519,12 @@
     "mora": "3",
     "source": "v9",
     "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
-    "keywords": []
+    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。 同一形の重複項目（単数明示）を統合。複数指定には専用形を用いる。",
+    "keywords": [
+      "二人称単数",
+      "あなたの",
+      "所有者"
+    ]
   },
   {
     "id": "R3-18",
@@ -1531,11 +1539,15 @@
     "mora": "3",
     "source": "v9",
     "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
+    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。 同一形の重複項目（単数明示）を統合。複数指定には専用形を用いる。",
     "keywords": [
       "third person",
       "彼",
-      "彼女"
+      "彼女",
+      "三人称単数・無指定",
+      "彼の",
+      "彼女の",
+      "所有者"
     ]
   },
   {
@@ -1587,26 +1599,6 @@
     "keywords": []
   },
   {
-    "id": "R3-22",
-    "kind": "小分類接辞",
-    "zone": "R",
-    "large": "所有",
-    "middle": "所有者指定",
-    "meaning": "一人称単数",
-    "large_form": "kutoq",
-    "small_form": "bupuchoq",
-    "form": "kutoq-bupuchoq",
-    "mora": "3",
-    "source": "v9",
-    "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
-    "keywords": [
-      "singular",
-      "彼",
-      "彼女"
-    ]
-  },
-  {
     "id": "R3-23",
     "kind": "小分類接辞",
     "zone": "R",
@@ -1623,26 +1615,6 @@
     "keywords": []
   },
   {
-    "id": "R3-24",
-    "kind": "小分類接辞",
-    "zone": "R",
-    "large": "所有",
-    "middle": "所有者指定",
-    "meaning": "二人称単数",
-    "large_form": "kutoq",
-    "small_form": "bepuchoq",
-    "form": "kutoq-bepuchoq",
-    "mora": "3",
-    "source": "v9",
-    "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
-    "keywords": [
-      "singular",
-      "彼",
-      "彼女"
-    ]
-  },
-  {
     "id": "R3-25",
     "kind": "小分類接辞",
     "zone": "R",
@@ -1657,27 +1629,6 @@
     "status": "正式",
     "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
     "keywords": []
-  },
-  {
-    "id": "R3-26",
-    "kind": "小分類接辞",
-    "zone": "R",
-    "large": "所有",
-    "middle": "所有者指定",
-    "meaning": "三人称単数・無指定",
-    "large_form": "kutoq",
-    "small_form": "bopuchoq",
-    "form": "kutoq-bopuchoq",
-    "mora": "3",
-    "source": "v9",
-    "status": "正式",
-    "note": "完成形は「大分類接辞＋小分類接辞」。同一大分類内では大分類接辞は一度だけ。",
-    "keywords": [
-      "singular",
-      "third person",
-      "彼",
-      "彼女"
-    ]
   },
   {
     "id": "R3-27",
@@ -14634,11 +14585,11 @@
     "meaning": "黄",
     "large_form": "",
     "small_form": "",
-    "form": "yoneq",
+    "form": "yonaq",
     "mora": "",
     "source": "新規候補",
     "status": "候補",
-    "note": "中心語根として使用。",
+    "note": "中心語根として使用。 旧候補形 yoneq は正式数詞 NUM-1B と同形だったため、候補形を変更。",
     "keywords": []
   },
   {
@@ -19010,6 +18961,1917 @@
     "note": "中心語根。民主政治・日常語彙拡張。派生関係は意味の近さを示す造語上の傾向であり、文法的な派生規則を追加するものではない。",
     "keywords": [
       "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-230",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "入る",
+    "large_form": "",
+    "small_form": "",
+    "form": "chareq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-231",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "出る",
+    "large_form": "",
+    "small_form": "",
+    "form": "cheroq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-232",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "入れる",
+    "large_form": "",
+    "small_form": "",
+    "form": "chareaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-233",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "出す",
+    "large_form": "",
+    "small_form": "",
+    "form": "cheroaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-234",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "会う",
+    "large_form": "",
+    "small_form": "",
+    "form": "humieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-235",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "尋ねる",
+    "large_form": "",
+    "small_form": "",
+    "form": "shaireq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-236",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "答える",
+    "large_form": "",
+    "small_form": "",
+    "form": "shairuq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-237",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "説明する",
+    "large_form": "",
+    "small_form": "",
+    "form": "sharimeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-238",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "理解する",
+    "large_form": "",
+    "small_form": "",
+    "form": "sireueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-239",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "覚える",
+    "large_form": "",
+    "small_form": "",
+    "form": "sirueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-240",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "信じる",
+    "large_form": "",
+    "small_form": "",
+    "form": "sunoreq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-241",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "疑う",
+    "large_form": "",
+    "small_form": "",
+    "form": "sunoraq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-242",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "感じる",
+    "large_form": "",
+    "small_form": "",
+    "form": "soneq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-243",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "笑う",
+    "large_form": "",
+    "small_form": "",
+    "form": "heneq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-244",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "泣く",
+    "large_form": "",
+    "small_form": "",
+    "form": "henueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-245",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "洗う",
+    "large_form": "",
+    "small_form": "",
+    "form": "senuaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-246",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "切る",
+    "large_form": "",
+    "small_form": "",
+    "form": "kateaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-247",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "拾う",
+    "large_form": "",
+    "small_form": "",
+    "form": "morueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-248",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "運ぶ",
+    "large_form": "",
+    "small_form": "",
+    "form": "warumeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-249",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "落ちる",
+    "large_form": "",
+    "small_form": "",
+    "form": "moroeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-250",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "落とす",
+    "large_form": "",
+    "small_form": "",
+    "form": "moroaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-251",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "修理する",
+    "large_form": "",
+    "small_form": "",
+    "form": "takeieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-252",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "支払う",
+    "large_form": "",
+    "small_form": "",
+    "form": "yoreieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-253",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "料理する",
+    "large_form": "",
+    "small_form": "",
+    "form": "namorieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-254",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "休む",
+    "large_form": "",
+    "small_form": "",
+    "form": "munoreq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-255",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "続ける",
+    "large_form": "",
+    "small_form": "",
+    "form": "tarieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-256",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "変わる",
+    "large_form": "",
+    "small_form": "",
+    "form": "tikameq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-257",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "基礎動詞",
+    "meaning": "比較する",
+    "large_form": "",
+    "small_form": "",
+    "form": "siraneq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎動詞"
+    ]
+  },
+  {
+    "id": "ROOT-258",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "友人",
+    "large_form": "",
+    "small_form": "",
+    "form": "humerueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "友達"
+    ]
+  },
+  {
+    "id": "ROOT-259",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "家族",
+    "large_form": "",
+    "small_form": "",
+    "form": "humeraq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-260",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "子供",
+    "large_form": "",
+    "small_form": "",
+    "form": "humepaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "子ども"
+    ]
+  },
+  {
+    "id": "ROOT-261",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "母",
+    "large_form": "",
+    "small_form": "",
+    "form": "humepeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "お母さん"
+    ]
+  },
+  {
+    "id": "ROOT-262",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "父",
+    "large_form": "",
+    "small_form": "",
+    "form": "humepiq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "お父さん"
+    ]
+  },
+  {
+    "id": "ROOT-263",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "部屋",
+    "large_form": "",
+    "small_form": "",
+    "form": "homireq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-264",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "扉",
+    "large_form": "",
+    "small_form": "",
+    "form": "charomeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "ドア"
+    ]
+  },
+  {
+    "id": "ROOT-265",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "窓",
+    "large_form": "",
+    "small_form": "",
+    "form": "charumeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-266",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "鍵",
+    "large_form": "",
+    "small_form": "",
+    "form": "chariq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-267",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "机",
+    "large_form": "",
+    "small_form": "",
+    "form": "shineamaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-268",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "椅子",
+    "large_form": "",
+    "small_form": "",
+    "form": "nuremaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "いす"
+    ]
+  },
+  {
+    "id": "ROOT-269",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "紙",
+    "large_form": "",
+    "small_form": "",
+    "form": "shinameq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-270",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "衣服",
+    "large_form": "",
+    "small_form": "",
+    "form": "humeumaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-271",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "靴",
+    "large_form": "",
+    "small_form": "",
+    "form": "rumaieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-272",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "鞄",
+    "large_form": "",
+    "small_form": "",
+    "form": "waromeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "かばん",
+      "バッグ"
+    ]
+  },
+  {
+    "id": "ROOT-273",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "野菜",
+    "large_form": "",
+    "small_form": "",
+    "form": "marumeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-274",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "果物",
+    "large_form": "",
+    "small_form": "",
+    "form": "maraueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "果実"
+    ]
+  },
+  {
+    "id": "ROOT-275",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "花",
+    "large_form": "",
+    "small_form": "",
+    "form": "marieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-276",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "猫",
+    "large_form": "",
+    "small_form": "",
+    "form": "banieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-277",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "店",
+    "large_form": "",
+    "small_form": "",
+    "form": "yoreireq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "商店"
+    ]
+  },
+  {
+    "id": "ROOT-278",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "価格",
+    "large_form": "",
+    "small_form": "",
+    "form": "yoreureq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-279",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "朝",
+    "large_form": "",
+    "small_form": "",
+    "form": "soureq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "朝方"
+    ]
+  },
+  {
+    "id": "ROOT-280",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "昼",
+    "large_form": "",
+    "small_form": "",
+    "form": "soumeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "日中"
+    ]
+  },
+  {
+    "id": "ROOT-281",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "夜",
+    "large_form": "",
+    "small_form": "",
+    "form": "souroq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "夜間"
+    ]
+  },
+  {
+    "id": "ROOT-282",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "言語",
+    "large_form": "",
+    "small_form": "",
+    "form": "shiaruq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "ことば"
+    ]
+  },
+  {
+    "id": "ROOT-283",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "質問",
+    "large_form": "",
+    "small_form": "",
+    "form": "shairemaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "問い"
+    ]
+  },
+  {
+    "id": "ROOT-284",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "返事",
+    "large_form": "",
+    "small_form": "",
+    "form": "shairemeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-285",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "感情",
+    "large_form": "",
+    "small_form": "",
+    "form": "sonamaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-286",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "計画",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireumaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-287",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "医者",
+    "large_form": "",
+    "small_form": "",
+    "form": "furieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-288",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "薬",
+    "large_form": "",
+    "small_form": "",
+    "form": "fureumaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞"
+    ]
+  },
+  {
+    "id": "ROOT-289",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "基礎名詞",
+    "meaning": "車",
+    "large_form": "",
+    "small_form": "",
+    "form": "waroaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "基礎名詞",
+      "自動車"
+    ]
+  },
+  {
+    "id": "ROOT-290",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "代表する",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraireuq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-291",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "提案する",
+    "large_form": "",
+    "small_form": "",
+    "form": "tiremeaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-292",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "審議する",
+    "large_form": "",
+    "small_form": "",
+    "form": "nourireoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-293",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "投票する",
+    "large_form": "",
+    "small_form": "",
+    "form": "chiremaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-294",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "可決する",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireipeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-295",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "否決する",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireipaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-296",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "改正する",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireureq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-297",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "廃止する",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireuroq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-298",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "任命する",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraoreaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-299",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "罷免する",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraoreoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-300",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "交渉する",
+    "large_form": "",
+    "small_form": "",
+    "form": "shureireq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-301",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "動詞",
+    "middle": "国家・民主政治動詞",
+    "meaning": "公開する",
+    "large_form": "",
+    "small_form": "",
+    "form": "sireorueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治動詞"
+    ]
+  },
+  {
+    "id": "ROOT-302",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "内閣",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraimeaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-303",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "首相",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraineaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治",
+      "総理大臣"
+    ]
+  },
+  {
+    "id": "ROOT-304",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "大統領",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraineoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-305",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "国家元首",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraineuq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治",
+      "元首"
+    ]
+  },
+  {
+    "id": "ROOT-306",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "省庁",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraimueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-307",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "与党",
+    "large_form": "",
+    "small_form": "",
+    "form": "nourapuq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-308",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "野党",
+    "large_form": "",
+    "small_form": "",
+    "form": "nourapeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-309",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "連立政権",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraieoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-310",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "議長",
+    "large_form": "",
+    "small_form": "",
+    "form": "nourireaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-311",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "議席",
+    "large_form": "",
+    "small_form": "",
+    "form": "nouriroq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-312",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "委員会",
+    "large_form": "",
+    "small_form": "",
+    "form": "nouripeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-313",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "委員",
+    "large_form": "",
+    "small_form": "",
+    "form": "nouripiq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-314",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "選挙区",
+    "large_form": "",
+    "small_form": "",
+    "form": "chireumaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-315",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "投票所",
+    "large_form": "",
+    "small_form": "",
+    "form": "chiremuaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-316",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "開票",
+    "large_form": "",
+    "small_form": "",
+    "form": "chiremieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-317",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "当選",
+    "large_form": "",
+    "small_form": "",
+    "form": "chireruq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-318",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "落選",
+    "large_form": "",
+    "small_form": "",
+    "form": "chireroq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-319",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "棄権",
+    "large_form": "",
+    "small_form": "",
+    "form": "chirepuaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-320",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "無効票",
+    "large_form": "",
+    "small_form": "",
+    "form": "chirepueq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-321",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "定足数",
+    "large_form": "",
+    "small_form": "",
+    "form": "pinireq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-322",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "過半数",
+    "large_form": "",
+    "small_form": "",
+    "form": "pinieq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-323",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "判決",
+    "large_form": "",
+    "small_form": "",
+    "form": "tireonaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-324",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "証拠",
+    "large_form": "",
+    "small_form": "",
+    "form": "sireunoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-325",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "警察",
+    "large_form": "",
+    "small_form": "",
+    "form": "furenamaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-326",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "人口",
+    "large_form": "",
+    "small_form": "",
+    "form": "humenomaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-327",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "統計",
+    "large_form": "",
+    "small_form": "",
+    "form": "pinumeq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-328",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "国勢調査",
+    "large_form": "",
+    "small_form": "",
+    "form": "humenoreq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治",
+      "人口調査"
+    ]
+  },
+  {
+    "id": "ROOT-329",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "公文書",
+    "large_form": "",
+    "small_form": "",
+    "form": "guraunaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-330",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "税収",
+    "large_form": "",
+    "small_form": "",
+    "form": "pirenoq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-331",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "歳出",
+    "large_form": "",
+    "small_form": "",
+    "form": "pireonaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-332",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "国籍",
+    "large_form": "",
+    "small_form": "",
+    "form": "humeromaq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-333",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "行政区",
+    "large_form": "",
+    "small_form": "",
+    "form": "dumaoreq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治"
+    ]
+  },
+  {
+    "id": "ROOT-334",
+    "kind": "単語",
+    "zone": "ROOT",
+    "large": "名詞",
+    "middle": "国家・民主政治",
+    "meaning": "州・県",
+    "large_form": "",
+    "small_form": "",
+    "form": "dumameq",
+    "mora": "",
+    "source": "v5.7語彙拡張",
+    "status": "新規登録",
+    "note": "独立した中心語根。意味上の語族を意識した造語だが、語族の類似音は文法的な派生規則ではない。",
+    "keywords": [
+      "国家・民主政治",
+      "州",
+      "県"
     ]
   }
 ]
